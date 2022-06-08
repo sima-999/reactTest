@@ -63,7 +63,7 @@ class RegisterComponent extends React.Component<WithTranslation&ReturnType<typeo
                 <button onClick={()=>{
                     this.changeLanguage()
                     // this.setState((prestate,preprop)=> { console.log({prestate,preprop}); return {count:prestate.count+1}})
-                }}>点击切换语言</button> 
+                }}>点击切换语言（sandbox）</button> 
                 <div>我是注册页面啊</div>
                 <h1>{t('register.simayi')}</h1>
                 {/* <p>{this.state.count}</p> */}
