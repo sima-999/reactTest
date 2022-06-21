@@ -5,7 +5,6 @@ interface ChangeLanguageAction {
     type: typeof CHANGE_LANGUAGE;
     payload: 'zh' | 'en';
 }
-
 interface AddLanguageAction {
     type: typeof ADD_LANGUAGE;
     payload: {

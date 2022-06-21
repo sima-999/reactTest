@@ -5,7 +5,6 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 // import {appContext,defaultContentValue} from './AppState'
 import {AppStateProvider} from './AppState'
-import {BrowserRouter} from 'react-router-dom'
 import './i18n/configs'
 import { Provider } from 'react-redux'
 import store from './redux/store'
@@ -17,18 +16,16 @@ const userInfo={name:'司马懿1231、麻袋',id:22}
 
 root.render(
   // <React.StrictMode>
-  // <appContext.Provider value={defaultContentValue}>
-  //   <App userInfo={userInfo}/>
-  // </appContext.Provider>
-  // </React.StrictMode>
-  <BrowserRouter>
+  //  <appContext.Provider value={defaultContentValue}>
+  //    <App userInfo={userInfo}/>
+  // </appContext.Provider> 
     <Provider store={store}>
       <AppStateProvider>
         {/* <App userInfo={userInfo}/> */}
         <App />
       </AppStateProvider>
     </Provider>
-  </BrowserRouter>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -9,7 +9,8 @@ import ShoppogCart from './components/ShoppingCart';
 import {BrowserRouter,Route,Routes,useRoutes} from 'react-router-dom'
 import {Home,Detail} from './pages'
 
-import myRoutes from './router/Routes'
+import routes,{onRouteBefore} from './router/Routes'
+import RouterGuard from './router/router-guard'
 
 interface Props{
   userInfo:{id:number,name:string}
@@ -133,7 +134,14 @@ interface Props{
 //   )
 // }
 function App(){
-  const element =useRoutes(myRoutes)
-  return (<>{element}</>)
+  // const element =useRoutes(routes)
+  // return (<>{element}</>)
+  return (
+  <BrowserRouter>
+  <RouterGuard
+    routers={routes}
+    onRouterBefore={onRouteBefore}
+    loading={<div>路由加载中。。。</div>}/>
+    </BrowserRouter>)
 }
 export default App;

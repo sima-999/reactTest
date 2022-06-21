@@ -1,26 +1,20 @@
 // export * from './Register'
 
 import React from 'react'
-// import {useParams,useLocation} from 'react-router-dom'
-import {changeLanguageActionCreator,LanguageActionTypes} from '../../redux/language/languageActions'
 import {useTranslation} from 'react-i18next'
 
 import {useSelector} from '../../redux/hooks'
 import {useDispatch } from 'react-redux'
-import {Dispatch} from 'redux'
+import {languageSlice} from '../../redux/languageForSlice/slice'
 
 export const Register:React.FC=()=>{
-    // const location = useLocation();
-    // const params = useParams();
     const language=useSelector((state)=>state.language.language)
     const languageList=useSelector((state)=>state.language.languageList)
-
-    // const dispatch=useDispatch()
-    const dispatch=useDispatch<Dispatch<LanguageActionTypes>>()
+    const dispatch=useDispatch()
 
     const changeLanguage=()=>{
         const lang=language==='zh'?'en':'zh'
-        dispatch(changeLanguageActionCreator(lang))
+        dispatch(languageSlice.actions.changeLanguage(lang))
     }
     const {t}=useTranslation()
     return (

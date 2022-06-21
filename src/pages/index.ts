@@ -1,3 +1,5 @@
 export * from './detail'
 export * from './home'
 export * from './register'
+export * from './demo'
+export * from './login'
